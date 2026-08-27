@@ -1,0 +1,8 @@
+{
+  "status": "RECOVERABLE",
+  "code": "SESSION_NOTICE",
+  "message": "Dismissible session/maintenance notice is blocking the flow",
+  "recoveryAction": "click #dismiss-notice",
+  "stepsCompleted": 1,
+  "evidenceDir": "evidence/replay/replay-12345-1787841838729"
+}

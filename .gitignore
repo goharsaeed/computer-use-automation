@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+.DS_Store
+evidence/**/raw-unredacted/
+*.log
+playwright-report/
+test-results/

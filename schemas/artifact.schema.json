@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CapabilityArtifact",
+  "type": "object",
+  "required": ["id", "name", "version", "description", "target", "inputs", "outputs", "steps", "checkpoint", "policyRef", "createdAt"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "description": { "type": "string" },
+    "target": { "type": "object" },
+    "inputs": { "type": "array" },
+    "outputs": { "type": "array" },
+    "steps": { "type": "array" },
+    "checkpoint": { "type": "object" },
+    "policyRef": { "type": "string" },
+    "createdAt": { "type": "string" }
+  }
+}

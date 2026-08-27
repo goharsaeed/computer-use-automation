@@ -1,0 +1,7 @@
+{
+  "status": "BUSINESS_OUTCOME",
+  "code": "MEMBER_NOT_FOUND",
+  "message": "No member found for ID 99999.",
+  "stepsCompleted": 3,
+  "evidenceDir": "evidence/replay/replay-99999-1787841837943"
+}

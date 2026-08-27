@@ -1,0 +1,15 @@
+{
+  "status": "SUCCESS",
+  "outputs": {
+    "savingsBalance": "1,250.75",
+    "memberName": "Alex Rivera"
+  },
+  "stepsCompleted": 6,
+  "evidenceDir": "evidence/replay/replay-12345-1787841837086",
+  "recoveries": [
+    {
+      "code": "SESSION_NOTICE",
+      "recoveryAction": "click #dismiss-notice"
+    }
+  ]
+}

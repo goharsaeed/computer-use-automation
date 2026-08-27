@@ -1,0 +1,31 @@
+{
+  "name": "computer-use-automation",
+  "version": "1.0.0",
+  "description": "interface.ai take-home: LLM discovery → capability artifact → deterministic replay",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "target": "tsx target/server.ts",
+    "discover": "tsx src/cli/discover.ts",
+    "replay": "tsx src/cli/replay.ts",
+    "escalate-demo": "tsx src/cli/escalate-demo.ts",
+    "test": "tsx --test src/**/*.test.ts",
+    "demo:all": "tsx src/cli/demo-all.ts"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "openai": "^4.77.0",
+    "playwright": "^1.49.1",
+    "zod": "^3.24.1",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "esc-1787841839510",
+  "createdAt": "2026-08-27T14:43:59.553Z",
+  "reason": "Simulated stuck state: unexpected dialog / needs human judgment",
+  "goal": "Look up member and read savings balance",
+  "currentStep": "before-submit",
+  "ownership": "human",
+  "screenshotPath": "evidence/handoff/handoff-1787841839398/escalate.png",
+  "stateSummary": "{\"url\":\"http://127.0.0.1:3456/lookup\",\"title\":\"Member Lookup — Vital Core\"}"
+}

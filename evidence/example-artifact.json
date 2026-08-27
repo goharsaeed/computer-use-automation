@@ -1,0 +1,108 @@
+{
+  "id": "lookup-member-savings",
+  "name": "LookupMemberSavingsBalance",
+  "version": "1.0.0",
+  "description": "Look up member 12345 and read their current savings balance",
+  "target": {
+    "kind": "web",
+    "baseUrlParam": "baseUrl",
+    "entryPath": "/lookup"
+  },
+  "inputs": [
+    {
+      "name": "memberId",
+      "type": "string",
+      "description": "Member identifier to look up",
+      "required": true
+    },
+    {
+      "name": "baseUrl",
+      "type": "string",
+      "description": "Base URL of the target app",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "savingsBalance",
+      "type": "money",
+      "description": "Current savings balance displayed on member detail"
+    },
+    {
+      "name": "memberName",
+      "type": "string",
+      "description": "Member display name"
+    }
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "action": "navigate",
+      "description": "Start at target entry point",
+      "urlTemplate": "{baseUrl}/"
+    },
+    {
+      "id": "s2",
+      "action": "click",
+      "description": "Go to lookup",
+      "locator": {
+        "strategy": "css",
+        "value": "#nav-lookup",
+        "rationale": "Nav link"
+      }
+    },
+    {
+      "id": "s3",
+      "action": "type",
+      "description": "hasMemberIdInput=true and alreadyTyped=false",
+      "locator": {
+        "strategy": "css",
+        "value": "#memberId",
+        "rationale": "Recorded from discovery"
+      },
+      "textParam": "memberId"
+    },
+    {
+      "id": "s4",
+      "action": "click",
+      "description": "suggestedNext action, alreadyTyped=true, and no other valid next steps",
+      "locator": {
+        "strategy": "css",
+        "value": "#lookup-submit",
+        "rationale": "Recorded from discovery"
+      }
+    },
+    {
+      "id": "s5",
+      "action": "extract",
+      "description": "hasSavingsBalance=true",
+      "locator": {
+        "strategy": "css",
+        "value": "#savings-balance",
+        "rationale": "Recorded from discovery"
+      },
+      "extractAs": "savingsBalance"
+    },
+    {
+      "id": "s6",
+      "action": "extract",
+      "description": "Read member name",
+      "locator": {
+        "strategy": "css",
+        "value": "#member-name",
+        "rationale": "Companion output on member detail page"
+      },
+      "extractAs": "memberName"
+    }
+  ],
+  "checkpoint": {
+    "description": "Savings balance element is visible on member detail page",
+    "locator": {
+      "strategy": "css",
+      "value": "#savings-balance",
+      "rationale": "Presence proves successful lookup happy path"
+    }
+  },
+  "policyRef": "defaultPolicy@1",
+  "createdAt": "2026-08-27T14:43:56.612Z"
+}

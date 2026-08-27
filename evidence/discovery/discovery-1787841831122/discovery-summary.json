@@ -1,0 +1,13 @@
+{
+  "goal": "Look up member 12345 and read their current savings balance",
+  "success": true,
+  "mode": "llm:ollama",
+  "provider": "ollama",
+  "model": "llama3.2:3b",
+  "outputs": {
+    "savingsBalance": "1,250.75",
+    "memberName": "Alex Rivera"
+  },
+  "actionCount": 7,
+  "escalatedOnFailure": false
+}

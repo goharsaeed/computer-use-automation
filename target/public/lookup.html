@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Member Lookup — Vital Core</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Vital Core Servicing</h1>
+    <p class="muted">Member Lookup</p>
+  </header>
+  <main>
+    <div class="card notice" id="session-notice" role="dialog" aria-label="Session notice">
+      <p id="session-notice-text">System notice: temporary maintenance banner. Dismiss to continue.</p>
+      <button type="button" id="dismiss-notice">Dismiss</button>
+    </div>
+    <div class="card">
+      <h2>Look up member</h2>
+      <form id="lookup-form" method="POST" action="/lookup">
+        <label for="memberId">Member ID</label>
+        <input id="memberId" name="memberId" type="text" placeholder="e.g. 12345" />
+        <button id="lookup-submit" type="submit">Search</button>
+      </form>
+      <p class="hint">Try 12345 (found) or 99999 (not found).</p>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var notice = document.getElementById("session-notice");
+      var btn = document.getElementById("dismiss-notice");
+      if (!notice || !btn) return;
+      btn.addEventListener("click", function () {
+        notice.setAttribute("hidden", "true");
+        notice.style.display = "none";
+      });
+    })();
+  </script>
+</body>
+</html>
